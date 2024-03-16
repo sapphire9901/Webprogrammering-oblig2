@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oblig2-webprogrammering</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="billettsalg.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+<div class="container shadow-lg p-3 mb-5 bg-white rounded">
+    <h1 class="text-center text-uppercase ">Bestilling av kinobilletter</h1>
+    <form>
+        <div class="form-group ">
+            <label for="Velgfilm"  class="form-label">Velg Film</label>
+            <select class="custom-select" id="Velgfilm">
+                <option disabled selected hidden> Velg film her</option>
+                <option >Frozen</option>
+                <option >Encanto</option>
+                <option >Kung Fu Panda</option>
+                <option >The Batman</option>
+                <option >Fantastic Beast: The secrets of Dumbledore</option>
+            </select>
+            <span id="feilfilm" class="feilmelding"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="antall" class="form-label">Antall</label>
+            <input type="number" name="" id="antall" class="form-control">
+            <span id="antallfeil" class="feilmelding"></span>
+        </div>
+        <div class="form-group">
+            <label for="fnavn">Fornavn</label>
+            <input type="text" id="fnavn" class="form-control">
+            <span id="fornavnfeil" class="feilmelding"></span>
+        </div>
+        <div class="form-group">
+            <label for="enavn">Etternavn</label>
+            <input type="text" class="form-control" id="enavn">
+            <span id="etternavnfeil" class="feilmelding"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="tnr">Telefonnr</label>
+            <input type="number" id="tnr" class="form-control" min="8" max="12">
+            <span id="telefonnrfeil" class="feilmelding"></span>
+        </div>
+        <div class="form-group">
+            <label for="epost">Epost</label>
+            <input type="email" class="form-control" id="epost">
+            <span id="epostfeil" class="feilmelding"></span>
+        </div>
+        <div>
+            <button type="button" onclick="billettRegistrering()"
+                    class="btn btn-outline-success my-2 " >Kjøp billett</button>
+        </div>
+        <div>
+            <h3>Alle Biletter</h3>
+            <div class="table table-striped table-hover" id="biletttabell"></div>
+        </div>
+        <div>
+            <button type="button" class="btn btn-outline-primary my-2" onclick="slettBilletter()">Slett alle billetter</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
