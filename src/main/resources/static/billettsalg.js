@@ -1,3 +1,5 @@
+
+//funkjson for validering ved bruk av boolean
 function billettRegistrering() {
     let bol=true;
     if ($("#Velgfilm").val()===""){
@@ -47,6 +49,7 @@ function billettRegistrering() {
     $("#epost").val("");
 }
 
+//funksjon for å hente billetene
 function hentAlleBilletter() {
     $.get("/hentAlleBilletter", function(billetter) {
         formaterTabell(billetter);
@@ -54,6 +57,8 @@ function hentAlleBilletter() {
 }
 
 console.log("it gets here 4");
+
+//funksjon for billetter der
 function formaterTabell(billetter) {
     let ut = "<table><tr><th>Film</th><th>Antall</th><th>Fornavn</th><th>Etternavn</th><th>Telefonnr</th><th>Epost</th></tr>";
     for (let billett of billetter){
@@ -64,7 +69,7 @@ function formaterTabell(billetter) {
     $("#biletttabell").html(ut);
 }
 
-
+//funksjon for å slette billetter
 function slettBilletter() {
     $.get("/slettAlleBilletter", function() {
         hentAlleBilletter();
