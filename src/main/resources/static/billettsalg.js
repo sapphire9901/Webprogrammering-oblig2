@@ -27,6 +27,7 @@ function billettRegistrering() {
         bol=false;
     }else{$("#epostfeil").html("")}
 
+    //lage billettene
     if(bol){
         const billettsalg = { //info fra inputene
             film: $("#Velgfilm").val(),
